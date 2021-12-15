@@ -6,8 +6,8 @@ use std::{io, thread};
 use std::cmp::Ordering;
 use std::time::Duration;
 use chrono::Utc;
-use crate::lib;
-use crate::lib::TextMessage;
+use crate::text_msg;
+use crate::text_msg::TextMessage;
 
 
 pub fn run(local_host:&'static str,msg_size:usize,sleep_millis:u64,username:&str){
@@ -29,7 +29,7 @@ pub fn run(local_host:&'static str,msg_size:usize,sleep_millis:u64,username:&str
                     let msg=String::from_utf8(msg).unwrap();
                     //使用fromstr的trait来通过String解析对象
                     //这里是接收方
-                    match msg.parse::<lib::TextMessage>() {
+                    match msg.parse::<text_msg::TextMessage>() {
                         Ok(text_message) => {
                             match check.cmp(&text_message.from().to_string()) {
                                 Ordering::Equal => {}

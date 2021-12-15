@@ -2,7 +2,7 @@ use std::io::{ErrorKind, Read, Write};
 use std::net::TcpListener;
 use std::sync::mpsc;
 use std::thread;
-use crate::lib::TextMessage;
+use crate::text_msg::TextMessage;
 
 pub fn run(local_host:&'static str,msg_size:usize,sleep_millis:u64) {
     //绑定地址

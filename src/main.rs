@@ -2,7 +2,7 @@ use std::io;
 
 mod lib_for_server;
 mod lib_for_client;
-mod lib;
+mod text_msg;
 
 const LOCAL_HOST: &str = "127.0.0.1:7878";
 const MESSAGE_SIZE: usize = 128;
