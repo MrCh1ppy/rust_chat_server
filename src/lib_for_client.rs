@@ -8,6 +8,9 @@ use std::time::Duration;
 use chrono::Utc;
 use crate::text_msg;
 use crate::text_msg::TextMessage;
+use crate::content_dealer;
+
+
 
 
 pub fn run(local_host:&'static str,msg_size:usize,sleep_millis:u64,username:&str){
@@ -79,7 +82,7 @@ pub fn run(local_host:&'static str,msg_size:usize,sleep_millis:u64,username:&str
             //to_string相当于复制值
             local_address_text.to_string(),
             local_host.to_string(),
-            msg.clone(),
+            content_dealer::run(msg.trim()).to_string(),
             Utc::now().format("%T").to_string(),
             username.to_string()
         );

@@ -31,7 +31,7 @@ impl  TextMessage{
     pub fn username(&self) -> &str{&self.username}
 
     pub fn new(from: String, to:String, content:String, m_date:String, username:String) ->TextMessage{
-        return TextMessage{
+        TextMessage{
             from,
             to,
             content,
@@ -41,12 +41,15 @@ impl  TextMessage{
     }
 }
 
+//实现了toString接口
 impl ToString for TextMessage{
     fn to_string(&self) -> String {
         format!("^{}&{}&{}&{}&{}^", self.from, self.to, self.content, self.m_date, self.username)
     }
 }
 
+
+//实现了通过字符串解析的接口
 impl FromStr for TextMessage {
     type Err = ParseIntError;
 
