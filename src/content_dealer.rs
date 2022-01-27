@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+
 
 pub fn run(target:&str)->&str{
     let info:Vec<&str>=target.split("*").collect();
